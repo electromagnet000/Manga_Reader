@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<h1>Welcome to your manga read list</h1>
+<a href=add_manga>Add_manga</a>
+
+<div>
+    <ul>
+        {% if manga_list %}
+            {% for manga in manga_list %}
+            <div class="manga_container">
+                {% if manga.title %}
+                    <li>{{manga.title}}</li>
+                {% endif %}
+            </div>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+</body>
+</html>
