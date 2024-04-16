@@ -4,15 +4,11 @@ import requests
 def Api_add_manga(manga_title):
 
     base_url = "https://api.mangadex.org"
-    includes = ['author','cover_art']
+    includes = ['author','cover_art','artist']
     response = requests.get(f"{base_url}/manga", params={"title": manga_title, "includes[]": includes})
     if response.status_code == requests.codes.ok:
 
         fetched_data = response.json()
-
-        with open("json_data", "w") as f:
-            json.dump(fetched_data, f)
-
 
         manga_entry = fetched_data["data"][0]
         manga_data = manga_entry.get('attributes')
@@ -39,6 +35,10 @@ def Api_add_manga(manga_title):
                 author_data = relationship.get('attributes')
                 manga_wanted['author'] = author_data.get("name")
 
+        try:
+            if not manga_wanted:
+                return f"Manga : {manga_title} not found in API"
+        except KeyError as e:
+            return f"Manga : {manga_title} not found in API database"
 
-        print(manga_wanted)
         return manga_wanted

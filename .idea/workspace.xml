@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aca4a50b-8322-4043-b9d8-fcba98be4680" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/static/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/API_Json/API_manga_functionality.py" beforeDir="false" afterPath="$PROJECT_DIR$/API_Json/API_manga_functionality.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sqlite_data/User_data_manga_website.db" beforeDir="false" afterPath="$PROJECT_DIR$/Sqlite_data/User_data_manga_website.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/json_data" beforeDir="false" afterPath="$PROJECT_DIR$/json_data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/Home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_manga.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +43,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/sergi/PycharmProjects/pythonProject7/SQL-Movie_database/main.py",
+    "last_opened_file_path": "C:/Users/sergi/PycharmProjects/pythonProject7/SQL-Movie_database/API_JSON/API_functionality.py",
     "run.code.analysis.last.selected.profile": "pProject Default"
   }
 }]]></component>
@@ -95,11 +93,19 @@
       <option name="project" value="LOCAL" />
       <updated>1713029316251</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Overhall on the Html home page, Added Style and Scripts, into the static folder, better optimised the API to handle additional requests such as Author name and chapter page, fixed the cover art">
+      <created>1713293730103</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713293730103</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start of my new project : Manga Reader" />
-    <option name="LAST_COMMIT_MESSAGE" value="start of my new project : Manga Reader" />
+    <MESSAGE value="Overhall on the Html home page, Added Style and Scripts, into the static folder, better optimised the API to handle additional requests such as Author name and chapter page, fixed the cover art" />
+    <option name="LAST_COMMIT_MESSAGE" value="Overhall on the Html home page, Added Style and Scripts, into the static folder, better optimised the API to handle additional requests such as Author name and chapter page, fixed the cover art" />
   </component>
 </project>
