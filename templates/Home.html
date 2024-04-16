@@ -3,18 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{url_for('static', filename='scripts.js')}}"></script>
 </head>
 <body>
 <h1>Welcome to your manga read list</h1>
-<a href=add_manga>Add_manga</a>
+
+
+<div class="page_intro">
+    <form action="/add_manga" method="POST">
+    <label for="manga_chosen">Which manga would you like to add?</label>
+    <input type="text" id="manga_chosen" name="manga_chosen" value="{{ manga_chosen }}" placeholder="manga name">
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</div>
+
 
 <div>
-    <ul>
+    <ul class="manga_container">
         {% if manga_list %}
             {% for manga in manga_list %}
-            <div class="manga_container">
-                {% if manga.title %}
+            <div>
+                {% if manga.id %}
+                        {% if manga.filename %}
+                        <a href="https://mangadex.org/title/{{manga.id}}/{{manga.title}}">
+                        <img src="https://uploads.mangadex.org/covers/{{manga.id}}/{{manga.filename}}.256.jpg" alt="{{manga.title}} cover art">
+                        </a>
+                        {% endif %}
                     <li>{{manga.title}}</li>
+                    <li>{{manga.year}}</li>
+                    <li>Author : {{manga.author}}</li>
+                    <div id="{{manga.id}}" class="manga_description">
+                    <li>{{manga.description}}</li>
+                    </div>
+                    <button onclick="show_description('{{manga.id}}')">Show Description</button>
+                    <a class="form_button" href="/del_manga/{{manga.id}}">Delete</a>
                 {% endif %}
             </div>
             {% endfor %}

@@ -1,0 +1,16 @@
+.manga_container {
+
+    display: grid;
+    justify-content: space-evenly;
+    grid-template-columns: 300px 300px 300px;
+
+        }
+
+.manga_description {
+    display: none;
+    margin_top: 10px;
+}
+
+ul {
+    list-style-type: none;
+}

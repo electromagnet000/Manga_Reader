@@ -13,14 +13,21 @@ app = Flask(__name__)
 user_manga = []
 db = SQLAlchemy()
 
-
 """
 Manga Class
 """
 
+
 class Manga:
-    def __init__(self, title):
+    def __init__(self, id, title, year, description, cover_art_id, filename, author):
         self.title = title
+        self.id = id
+        self.title = title
+        self.year = year
+        self.description = description
+        self.cover_art_id = cover_art_id
+        self.filename = filename
+        self.author = author
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -33,26 +40,26 @@ def add_manga():
     if request.method == "POST":
         manga_title = request.form.get("manga_chosen")
         try:
-            new_manga = Manga(Api_add_manga(manga_title))
-            user_manga.append(new_manga)
+            new_manga = Api_add_manga(manga_title)
+            print(new_manga)
+            user_manga.append(Manga(id=new_manga['id'], title=new_manga['title'], year=new_manga['year'], description=new_manga['description'], cover_art_id=new_manga['cover_art_id'], filename=new_manga['cover_art_filename'], author=new_manga['author']))
+            print("works")
             return redirect(url_for("home"))
 
         except Exception as e:
             print(f"there was an error : {e}")
 
-
     return render_template("add_manga.html")
 
 
-@app.route("/del_manga", methods=["DELETE"])
-def del_manga():
-    pass
+@app.route("/del_manga/<string:manga_id>", methods=["GET"])
+def del_manga(manga_id):
+    for manga in user_manga:
+        if manga.id == manga_id:
+            user_manga.remove(manga)
 
-
-@app.route("/upd_manga", methods=["POST"])
-def upd_manga():
-    pass
+    return redirect(url_for("home"))
 
 
 if __name__ in "__main__":
-    app.run(host="0.0.0.0", port=8000, debug=True)
+    app.run(host="localhost", port=5000, debug=True)
