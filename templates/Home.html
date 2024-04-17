@@ -7,7 +7,7 @@
     <script src="{{url_for('static', filename='scripts.js')}}"></script>
 </head>
 <body>
-<h1>Welcome to your manga read list</h1>
+<h1 class="page_heading">Serges Manga Bookshelf</h1>
 
 
 <div class="page_intro">
@@ -31,7 +31,7 @@
     <ul class="manga_container">
         {% if manga_list %}
             {% for manga in manga_list %}
-            <div>
+            <div class="card">
                 {% if manga.id %}
                         {% if manga.filename %}
                         <a href="https://mangadex.org/title/{{manga.id}}/{{manga.title}}">

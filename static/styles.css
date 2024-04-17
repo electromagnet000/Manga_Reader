@@ -25,11 +25,44 @@ ul {
     list-style-type: none;
 }
 
+.card {
+    opacity: 0.8;
+    transition: 0.5s;
+}
+.card:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.page_intro {
+    display: flex;
+    padding: 20px;
+}
+
 .page_intro .btn {
-    padding: 8px 16px;
-    background-color: #007bff;
+    padding: 4px 16px;
+    background-color: #1e1e1e;
     color: #fff;
     border: none;
     border-radius: 3px;
     cursor: pointer;
+}
+
+.btn {
+    padding: 2px 3px;
+    background-color: black;
+    color: white;
+    text-decoration: None;
+    border-radius: 3px;
+    font-size: 12px;
+    opacity: 0.5;
+    transition: 0.4s;
+}
+
+.btn:hover  {
+    background-color: red;
+    color: #fff;
+    transition: 0.1s;
+    opacity: 1;
+
 }
