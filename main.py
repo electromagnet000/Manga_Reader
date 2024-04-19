@@ -63,7 +63,7 @@ def create_app():
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-    user_manga = Manga.query.all()
+    user_manga = reversed(Manga.query.all())
     return render_template("home.html", manga_list=user_manga)
 
 

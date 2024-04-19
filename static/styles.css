@@ -26,10 +26,13 @@ ul {
 }
 
 .card {
+
+    width: 256px;
     opacity: 0.8;
     transition: 0.5s;
 }
 .card:hover {
+    width: 260px;
     opacity: 1;
     transition: 0.5s;
 }
