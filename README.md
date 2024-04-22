@@ -1,1 +1,1 @@
-Just a Managa reader using the manga dex API
+Did you ever want a digital bookshelf? filled with any manga you would want? well using the manga dex api some python combined with Sql, a pinch of javascript and a dallop of html I made my very own, Manga reader. 
