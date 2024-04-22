@@ -45,6 +45,8 @@ class Manga(db.Model):
     cover_art_id = db.Column(db.String)
     filename = db.Column(db.String)
     author = db.Column(db.String)
+    rating = db.Column(db.String)
+
 
     def __repr__(self):
         return f"{self.title}"
@@ -71,17 +73,20 @@ def home():
 def add_manga():
     if request.method == "POST":
         manga_title = request.form.get("manga_chosen")
+        index = request.form.get('selected_index')
         existing_manga = Manga.query.filter_by(title=manga_title).first()
         if existing_manga:
             flash("Movie already exists in the database.", "warning")
+            return
         else:
             try:
-                new_manga = Api_add_manga(manga_title)
+                new_manga = Api_add_manga(manga_title, int(index))
                 if new_manga:
                     print(new_manga)
                     manga = Manga(id=new_manga['id'], title=new_manga['title'], year=new_manga['year'],
                                             description=new_manga['description'], cover_art_id=new_manga['cover_art_id'],
-                                            filename=new_manga['cover_art_filename'], author=new_manga['author'])
+                                            filename=new_manga['cover_art_filename'], author=new_manga['author'],
+                                            rating=new_manga['rating'])
                     db.session.add(manga)
                     db.session.commit()
                     return redirect(url_for("home"))
@@ -102,5 +107,4 @@ def del_manga(manga_id):
 
 
 if __name__ in "__main__":
-    #create_app()
     app.run(host="localhost", port=5000, debug=True)

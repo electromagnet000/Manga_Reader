@@ -1,16 +1,15 @@
 import json
 import requests
 
-def Api_add_manga(manga_title):
-
+def Api_add_manga(manga_title,index):
     base_url = "https://api.mangadex.org"
-    includes = ['author','cover_art','artist']
+    includes = ['author', 'cover_art', 'artist']
     response = requests.get(f"{base_url}/manga", params={"title": manga_title, "includes[]": includes})
     if response.status_code == requests.codes.ok:
 
         fetched_data = response.json()
 
-        manga_entry = fetched_data["data"][0]
+        manga_entry = fetched_data["data"][index]
         manga_data = manga_entry.get('attributes')
 
         manga_wanted = {}
@@ -25,6 +24,7 @@ def Api_add_manga(manga_title):
         manga_wanted['cover_art_id'] = None
         manga_wanted['cover_art_filename'] = None
         manga_wanted['author'] = None
+        manga_wanted['rating'] = None
 
         for relationship in manga_entry.get('relationships', []):
             if relationship.get('type') == 'cover_art':

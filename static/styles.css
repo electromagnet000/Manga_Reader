@@ -3,6 +3,21 @@ html {
 
 }
 
+.displayResults {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.display_result_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    cursor:pointer;
+}
+
+
 .manga_container {
     display: grid;
     justify-content: space-evenly;
@@ -38,7 +53,7 @@ ul {
 }
 
 .page_intro {
-    display: flex;
+    display: block;
     padding: 20px;
 }
 
@@ -63,6 +78,27 @@ ul {
 }
 
 .btn:hover  {
+    background-color: red;
+    color: #fff;
+    transition: 0.1s;
+    opacity: 1;
+
+}
+
+.submit_button {
+    border: none;
+    padding: 4px 10px;
+    display: none;
+    background-color: black;
+    color: white;
+    text-decoration: None;
+    border-radius: 3px;
+    font-size: 12px;
+    opacity: 0.5;
+    transition: 0.4s;
+}
+
+.submit_button:hover  {
     background-color: red;
     color: #fff;
     transition: 0.1s;
